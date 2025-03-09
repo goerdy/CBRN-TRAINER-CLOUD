@@ -25,9 +25,13 @@ if (isset($_GET['action'])) {
         if (!file_exists('sessions')) {
             mkdir('sessions', 0777, true);
         }
-        file_put_contents($filename, json_encode(["sessionID" => $sessionID]));
-        file_put_contents($filename, json_encode([
+
+        // Initialisiere alle möglichen Werte für beide Trainer-Module
+        $initial_data = [
+            // Session ID
             "sessionID" => $sessionID,
+            
+            // Werte für C-Einsatz (TRAINER-C.php)
             "dosisleistung" => 0,
             "dosis" => 0,
             "co" => 0,
@@ -37,9 +41,17 @@ if (isset($_GET['action'])) {
             "ibut" => 0,
             "nona" => 0,
             "h2s" => 0,
-            "nh3" => 0
-        ]));
+            "nh3" => 0,
+            
+            // Werte für A-Einsatz (TRAINER-A.php)
+            "source_strength" => 0.0005,  // Startwert für Quellenintensität
+            "distance" => 1,              // Startwert für Abstand in Metern
+            "teletector" => false,        // Teletector nicht aktiviert
+            "cover" => false              // Keine Abschirmung aktiv
+        ];
 
+        // Schreibe die initialisierten Daten in die JSON-Datei
+        file_put_contents($filename, json_encode($initial_data, JSON_PRETTY_PRINT));
 
         // JSON-Antwort zurückgeben
         echo json_encode(["success" => true, "sessionID" => $sessionID]);
