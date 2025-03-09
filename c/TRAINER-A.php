@@ -545,7 +545,7 @@ if (file_exists($sessionFile)) {
                 qrDiv.innerHTML = '';
                 
                 const traineeUrl = window.location.origin + 
-                    '/CBRN-TRAINER/TRAINEE.php?sessionID=' + sessionID;
+                    '/c/TRAINEE.php?sessionID=' + sessionID;
                 
                 new QRCode(qrDiv, {
                     text: traineeUrl,

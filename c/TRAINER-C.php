@@ -794,7 +794,7 @@ if (file_exists($sessionFile)) {
                 
                 // Generate QR code for trainee URL
                 const traineeUrl = window.location.origin + 
-                    '/CBRN-TRAINER/TRAINEE.php?sessionID=' + sessionID;
+                    '/c/TRAINEE.php?sessionID=' + sessionID;
                 
                 var qr = new QRCode(qrDiv, {
                     text: traineeUrl,
