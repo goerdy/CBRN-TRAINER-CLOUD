@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>CBRN-TRAINER FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .credits {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .credits h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #333;
+        }
+
+        .back-button {
+            background-color: #666;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CBRN-TRAINER FAQ</h1>
+        <button onclick="window.location.href='index.php'" class="back-button">
+            ← Zurück zur Startseite
+        </button>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2>Über das Projekt</h2>
+            <p>Der CBRN-TRAINER ist ein Simulationsprojekt für die Ausbildung von Einsatzkräften im Bereich CBRN (Chemisch, Biologisch, Radiologisch, Nuklear). Das Tool ermöglicht es Ausbildern, verschiedene Messgeräte und Szenarien zu simulieren, ohne echte Gefahrstoffe oder Strahlenquellen zu benötigen.</p>
+        </div>
+
+        <div class="section">
+            <h2>Wie funktioniert es?</h2>
+            <h3>Für Ausbilder (Trainer)</h3>
+            <ol>
+                <li>Erstellen Sie eine neue Session oder loggen Sie sich in eine bestehende ein</li>
+                <li>Nutzen Sie die Schieberegler, um die Werte für verschiedene Parameter einzustellen</li>
+                <li>Teilen Sie die Session-ID mit Ihren Teilnehmern oder nutzen Sie den QR-Code</li>
+                <li>Verwenden Sie die vordefinierten Szenarien oder erstellen Sie eigene Situationen</li>
+            </ol>
+
+            <h3>Für Teilnehmer (Trainee)</h3>
+            <ol>
+                <li>Erhalten Sie die Session-ID von Ihrem Ausbilder</li>
+                <li>Geben Sie die ID ein oder scannen Sie den QR-Code</li>
+                <li>Wählen Sie das zu verwendende Messgerät</li>
+                <li>Beobachten Sie die Messwerte in Echtzeit</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Verfügbare Messgeräte</h2>
+            <ul>
+                <li>CO Warngerät (PAC 6500)</li>
+                <li>Gas Multiwarngerät (X-AM 8000)</li>
+                <li>Dosisleistungsmessgerät (Automess)</li>
+                <li>Dosiswarngerät (Automess)</li>
+                <li>DL-Warner (Automess)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Vordefinierte Szenarien</h2>
+            <ul>
+                <li><strong>Brandszenario:</strong> Simuliert typische Gaskonzentrationen bei einem Brand</li>
+                <li><strong>Stadtgas (Raum):</strong> Simuliert eine leichte Gasansammlung in einem Raum</li>
+                <li><strong>Stadtgas (Leck):</strong> Simuliert ein aktives Gasleck mit kritischen Werten</li>
+            </ul>
+        </div>
+
+        <div class="credits">
+            <h3>Verwendete Ressourcen</h3>
+            <p><strong>QR Code Generator:</strong> <a href="https://davidshimjs.github.io/qrcodejs/" target="_blank">QRCode.js</a> von Sangmin, Shim</p>
+            <p><strong>Icons:</strong> <a href="https://iconoir.com/" target="_blank">Iconoir</a> - Open Source Icon Library</p>
+            <p>Alle Produktnamen, Logos und Marken sind Eigentum ihrer jeweiligen Inhaber.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Privates Projekt im Alpha-Status. Keine Gewährleistung.</p>
+        <p>Kontakt: <a href="mailto:cbrn-trainer@philipp-guerth.de">cbrn-trainer@philipp-guerth.de</a></p>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
