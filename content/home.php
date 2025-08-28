@@ -38,7 +38,7 @@
             <li>Mehrere Teilnehmer können gleichzeitig üben</li>
             <li>Trainer steuert die Messwerte zentral</li>
         </ul>
-        <a href="c/index.php" class="option-button cloud">Zur Cloud-Version</a>
+        <a href="index.php?page=cloud" class="option-button cloud">Mehr erfahren</a>
     </div>
     
     <div class="option-card">
@@ -50,7 +50,7 @@
             <li>Dosisleistungssimulation mit Bluetooth Beacons</li>
             <li>Kontaminationsnachweis mit Magneten</li>
         </ul>
-        <a href="a/index.php" class="option-button android">Zur Android-App</a>
+        <a href="index.php?page=app" class="option-button android">Mehr erfahren</a>
     </div>
 </div>
 

@@ -3,7 +3,7 @@
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 // Sicherheitscheck
-$allowedPages = ['home', 'faq', 'anleitung', 'impressum'];
+$allowedPages = ['home', 'faq', 'anleitung', 'impressum', 'datenschutz', 'app', 'cloud', 'opensource', 'unterstuetzen'];
 if (!in_array($page, $allowedPages)) {
     $page = 'home';
 }
@@ -12,7 +12,12 @@ if (!in_array($page, $allowedPages)) {
 $currentPage = $page;
 $pageTitle = ($page === 'home') ? 'Simulation von Messgeräten' : 
              (($page === 'faq') ? 'Häufig gestellte Fragen' : 
-             (($page === 'anleitung') ? 'Anleitung' : 'Impressum'));
+             (($page === 'anleitung') ? 'Anleitung' : 
+             (($page === 'app') ? 'Android-App' :
+             (($page === 'cloud') ? 'Cloud-Version' :
+             (($page === 'opensource') ? 'Open Source' :
+             (($page === 'unterstuetzen') ? 'Unterstützen' :
+             (($page === 'datenschutz') ? 'Datenschutz' : 'Impressum')))))));;
 
 // Bestimme die zu ladende Inhaltsdatei
 $contentFile = "content/{$page}.php";
@@ -354,6 +359,319 @@ if ($page === 'home') {
             font-style: italic;
             color: #666;
             font-size: 14px;
+        }
+    ';
+} else if ($page === 'app') {
+    $additionalStyles = '
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .download-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .qr-code-container {
+            text-align: center;
+        }
+
+        .qr-code-container img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .play-store-button {
+            text-align: center;
+        }
+
+        .play-store-button img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .play-store-button img:hover {
+            transform: scale(1.05);
+        }
+
+        .features-list {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .download-options {
+                flex-direction: column;
+            }
+        }
+    ';
+} else if ($page === 'cloud') {
+    $additionalStyles = '
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .free-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        
+        .option-card {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .option-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .option-button:hover {
+            background-color: #0056b3;
+        }
+        
+        .features-list {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .features-list h3 {
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        .features-list ul {
+            padding-left: 20px;
+        }
+        
+        .features-list li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+    ';
+} else if ($page === 'opensource') {
+    $additionalStyles = '
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .opensource-section, .license-section, .contribution-section, .development-info {
+            margin-bottom: 40px;
+        }
+        
+        .github-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .github-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .github-links .github-link {
+            margin: 0;
+        }
+        
+        .github-button {
+            display: inline-block;
+            background-color: #24292e;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .github-button:hover {
+            background-color: #2f363d;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .github-button strong {
+            font-size: 18px;
+        }
+        
+        .github-button span {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .license-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .license-details h4 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .license-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .license-note p {
+            margin: 0;
+            color: #856404;
+        }
+    ';
+} else if ($page === 'unterstuetzen') {
+    $additionalStyles = '
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .support-section, .rating-section, .thanks-section, .other-support, .motivation-section {
+            margin-bottom: 40px;
+        }
+        
+        .coffee-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .qr-code-container {
+            text-align: center;
+        }
+        
+        .qr-code-container img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .qr-code-container p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .coffee-button-container {
+            text-align: center;
+        }
+        
+        .rating-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .rating-image {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .thanks-note {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .thanks-note p {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .coffee-options {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     ';
 }

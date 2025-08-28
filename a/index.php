@@ -45,17 +45,23 @@
             flex-wrap: wrap;
         }
         
-        .device-icons {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .device-icons img {
-            height: 50px;
+        .logo {
+            height: 80px;
             object-fit: contain;
+            border-radius: 15px;
+        }
+
+        .header-link {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s;
+        }
+
+        .header-link:hover {
+            opacity: 0.8;
         }
 
         .app-container {
@@ -102,12 +108,54 @@
 
         .status-badge {
             display: inline-block;
-            background-color: #FFC107;
-            color: #333;
+            background-color: #4CAF50;
+            color: white;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 16px;
             margin-bottom: 20px;
+        }
+
+        .download-section {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .download-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .qr-code-container {
+            text-align: center;
+        }
+
+        .qr-code-container img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .play-store-button {
+            text-align: center;
+        }
+
+        .play-store-button img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .play-store-button img:hover {
+            transform: scale(1.05);
         }
 
         .features-list {
@@ -192,26 +240,24 @@
             .app-details {
                 text-align: center;
             }
+
+            .download-options {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header-container">
-        <div class="device-icons">
-            <img src="../c/icons/co_meter.php" alt="CO Warngerät">
-            <img src="../c/icons/multi_meter.php" alt="Multiwarngerät">
-        </div>
-        <h1>CBRN-TRAINER</h1>
-        <div class="device-icons">
-            <img src="../c/icons/dosisleistung_meter.php" alt="Dosisleistungsmessgerät">
-            <img src="../c/icons/dl_warner.php" alt="DL-Warner">
-            <img src="../c/icons/dosis_warner.php" alt="Dosiswarngerät">
-        </div>
+        <a href="../index.php" class="header-link">
+            <img src="../content/images/cbrn_trainer_logo.png" alt="CBRN-TRAINER Logo" class="logo">
+            <h1>CBRN-TRAINER</h1>
+        </a>
     </div>
 
-    <div class="status-badge">Beta-Phase</div>
+    <div class="status-badge">Jetzt verfügbar im Play Store!</div>
     
-    <p>Die Android-App des CBRN-TRAINERS befindet sich derzeit in der Entwicklung.</p>
+    <p>Die Android-App des CBRN-TRAINERS ist jetzt offiziell im Google Play Store verfügbar!</p>
     
     <div class="app-container">
         <div class="app-info">
@@ -219,21 +265,24 @@
             <p>
                 Die Android-App des CBRN-TRAINERs bietet Zugriff auf die Cloud-Version und zusätzliche Features für realistische Übungen im Feld.
             </p>
+        </div>
+
+        <div class="download-section">
+            <h3>App herunterladen</h3>
+            <p>Scannen Sie den QR-Code oder klicken Sie auf den Play Store-Button, um die App zu installieren:</p>
             
-            <h3>Status der App</h3>
-            <p>
-                Der Anmeldeprozess im Google Play Store ist noch nicht abgeschlossen. Wir arbeiten daran, die App so bald wie möglich offiziell verfügbar zu machen.
-            </p>
-            
-            <h3>Beta-Tester gesucht!</h3>
-            <p>
-                Möchten Sie die App schon jetzt testen? Wir suchen engagierte Beta-Tester, die uns helfen, die App zu verbessern, bevor sie offiziell veröffentlicht wird.
-            </p>
-            <p>
-                Schreiben Sie einfach eine E-Mail an <a href="mailto:info@cbrn-trainer.de">info@cbrn-trainer.de</a> mit dem Betreff "Beta-Test" und wir senden Ihnen die APK-Datei zum Testen zu.
-            </p>
-            
-            <a href="mailto:info@cbrn-trainer.de?subject=Beta-Test%20CBRN-TRAINER%20App" class="cta-button">Als Beta-Tester bewerben</a>
+            <div class="download-options">
+                <div class="qr-code-container">
+                    <img src="qr_code_google_play_final.png" alt="QR-Code für Google Play Store">
+                    <p>QR-Code scannen</p>
+                </div>
+                
+                <div class="play-store-button">
+                    <a href="https://play.google.com/store/apps/details?id=de.cbrntrainer" target="_blank">
+                        <img src="getitongoogleplay.png" alt="Jetzt im Google Play Store">
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="features-list">
@@ -243,7 +292,32 @@
                 <li>Optimiert für Android-Smartphones und -Tablets</li>
                 <li>Dosisleistungssimulation mit Bluetooth Beacons</li>
                 <li>Kontaminationsnachweis mit Magneten</li>
+                <li>Offline-fähige Funktionen</li>
             </ul>
+        </div>
+
+        <div class="app-info">
+            <h3>Systemanforderungen</h3>
+            <p>
+                <strong>Android-Version:</strong> Android 7.0 (API Level 24) oder höher<br>
+                <strong>Empfohlene Geräte:</strong> Smartphone oder Tablet mit Android 7.0+<br>
+                <strong>Bluetooth Low Energy (BLE):</strong> Für Beacon-Modus erforderlich<br>
+                <strong>Magnetometer/Kompass:</strong> Für Kontaminationsnachweis (nicht in allen Geräten verfügbar)<br>
+                <strong>RAM:</strong> Mindestens 2 GB<br>
+                <strong>Speicherplatz:</strong> 50 MB freier Speicherplatz
+            </p>
+            
+            <h4>Funktionen je nach Geräteausstattung:</h4>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>Cloud-Modus:</strong> Funktioniert auf allen kompatiblen Geräten</li>
+                <li><strong>Bluetooth-Modus:</strong> Benötigt BLE-fähiges Gerät</li>
+                <li><strong>Kontaminationsnachweis:</strong> Benötigt Magnetometer (nicht in jedem Smartphone verbaut)</li>
+                <li><strong>Internetverbindung:</strong> Nur für Cloud-Modus erforderlich</li>
+            </ul>
+            
+            <p style="font-style: italic; margin-top: 20px;">
+                <strong>Hinweis:</strong> Die App ist optimiert für Vollbildmodus und verhindert automatisch Display-Timeouts während der Nutzung.
+            </p>
         </div>
     </div>
 

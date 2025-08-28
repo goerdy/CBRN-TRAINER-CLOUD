@@ -59,6 +59,20 @@
     <h2>Rechtliches</h2>
     
     <div class="faq-item">
+        <div class="faq-question">Warum gibt es keine App fürs iPhone?</div>
+        <div class="faq-answer">
+            Weil für die Entwicklung Apple Hardware nötig ist und das Einstellen von Apps in den App Store Geld kostet.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Kann ich mitwirken?</div>
+        <div class="faq-answer">
+            Ja, sehr gerne! Der CBRN-TRAINER ist ein Open Source Projekt und wir freuen uns über jede Art von Beitrag. Sie können Bug-Reports erstellen, neue Features vorschlagen, Code beitragen oder bei der Dokumentation helfen. Weitere Informationen finden Sie auf unserer <a href="index.php?page=opensource">Open Source-Seite</a>.
+        </div>
+    </div>
+    
+    <div class="faq-item">
         <div class="faq-question">Wie steht es um die Rechte an den dargestellten Messgeräten?</div>
         <div class="faq-answer">
             Ich habe versucht, die Messgeräte so nachzubilden, dass sie realistisch sind, ich aber keine Rechte der Messgerätehersteller verletze. Sollte ein Hersteller anderer Meinung sein, bitte ich um Kontaktaufnahme, dann werde ich das umgehend ändern. Ich bitte darum, von Abmahnungen etc. abzusehen, da dies wirklich nur ein kleines privates Projekt in bester Absicht ist.

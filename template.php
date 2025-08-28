@@ -48,17 +48,23 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        .device-icons {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .device-icons img {
-            height: 50px;
+        .logo {
+            height: 80px;
             object-fit: contain;
+            border-radius: 15px;
+        }
+
+        .header-link {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s;
+        }
+
+        .header-link:hover {
+            opacity: 0.8;
         }
 
         .main-menu {
@@ -135,22 +141,21 @@
 </head>
 <body>
     <div class="header-container">
-        <div class="device-icons">
-            <img src="c/icons/co_meter.php" alt="CO Warngerät">
-            <img src="c/icons/multi_meter.php" alt="Multiwarngerät">
-        </div>
-        <h1>CBRN-TRAINER</h1>
-        <div class="device-icons">
-            <img src="c/icons/dosisleistung_meter.php" alt="Dosisleistungsmessgerät">
-            <img src="c/icons/dl_warner.php" alt="DL-Warner">
-            <img src="c/icons/dosis_warner.php" alt="Dosiswarngerät">
-        </div>
+        <a href="index.php" class="header-link">
+            <img src="content/images/cbrn_trainer_logo.png" alt="CBRN-TRAINER Logo" class="logo">
+            <h1>CBRN-TRAINER</h1>
+        </a>
     </div>
 
     <div class="main-menu">
         <a href="index.php" <?php echo ($currentPage === 'home') ? 'class="active"' : ''; ?>>Startseite</a>
+        <a href="index.php?page=cloud" <?php echo ($currentPage === 'cloud') ? 'class="active"' : ''; ?>>Cloud</a>
+        <a href="index.php?page=app" <?php echo ($currentPage === 'app') ? 'class="active"' : ''; ?>>App</a>
         <a href="index.php?page=anleitung" <?php echo ($currentPage === 'anleitung') ? 'class="active"' : ''; ?>>Anleitung</a>
         <a href="index.php?page=faq" <?php echo ($currentPage === 'faq') ? 'class="active"' : ''; ?>>FAQ</a>
+        <a href="index.php?page=opensource" <?php echo ($currentPage === 'opensource') ? 'class="active"' : ''; ?>>Open Source</a>
+        <a href="index.php?page=unterstuetzen" <?php echo ($currentPage === 'unterstuetzen') ? 'class="active"' : ''; ?>>Unterstützen</a>
+        <a href="index.php?page=datenschutz" <?php echo ($currentPage === 'datenschutz') ? 'class="active"' : ''; ?>>Datenschutz</a>
         <a href="index.php?page=impressum" <?php echo ($currentPage === 'impressum') ? 'class="active"' : ''; ?>>Impressum</a>
     </div>
 
@@ -161,6 +166,7 @@
     <footer>
         Privates Projekt im Alpha-Status. Keine Gewährleistung. | 
         <a href="index.php?page=faq">FAQ</a> |
+        <a href="index.php?page=datenschutz">Datenschutz</a> |
         <a href="index.php?page=impressum">Impressum</a> |
         <a href="mailto:info@cbrn-trainer.de">Kontakt</a> | 
         &copy; <?php echo date('Y'); ?>
